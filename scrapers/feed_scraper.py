@@ -186,11 +186,6 @@ class FeedScraper(ABC):
         self, title: str, parsed_title_data: dict, scraper: IndexerBaseScraper
     ) -> bool:
         """Validate feed item"""
-
-        if is_contain_18_plus_keywords(title):
-            logger.info(f"Skipping adult content: {title}")
-            scraper.metrics.record_skip("Adult Content")
-            return False
         return True
 
     def get_media_type(
