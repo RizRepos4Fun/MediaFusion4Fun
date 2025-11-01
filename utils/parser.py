@@ -681,10 +681,7 @@ def is_contain_18_plus_keywords(title: str) -> bool:
     """
     Check if the title contains 18+ keywords to filter out adult content.
     """
-    if not settings.adult_content_filter_in_torrent_title:
-        return False
-
-    return ADULT_PARSER.parse(title).get("adult", False)
+    return False
 
 
 def calculate_max_similarity_ratio(
